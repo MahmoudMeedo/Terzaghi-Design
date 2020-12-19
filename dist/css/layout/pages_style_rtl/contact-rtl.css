@@ -1,0 +1,41 @@
+/************************************/
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+a {
+  font-family: 'Cairo', sans-serif !important; }
+
+header {
+  text-align: right; }
+  header .upper-bar .say-hi {
+    font-size: 22px; }
+  header nav .contact .con-icon .con-text {
+    right: auto;
+    left: 0; }
+    @media (max-width: 991px) {
+      header nav .contact .con-icon .con-text {
+        left: auto; } }
+
+.opened-bullet .bullet:first-of-type {
+  -webkit-transform: translate(-14px, 0px) rotateZ(45deg);
+  -moz-transform: translate(-14px, 0px) rotateZ(45deg);
+  -o-transform: translate(-14px, 0px) rotateZ(45deg); }
+.opened-bullet .bullet:last-of-type {
+  -webkit-transform: translate(13px, 0) rotateZ(-45deg);
+  -moz-transform: translate(13px, 0) rotateZ(-45deg);
+  -o-transform: translate(13px, 0) rotateZ(-45deg); }
+
+.contact .form input[type="phone"],
+.contact .form input:nth-of-type(2) {
+  margin-left: 0;
+  margin-right: 10px; }
+
+.contact .form input:first-of-type,
+.contact .form input:nth-of-type(3) {
+  margin-right: 0; }
+
+/*# sourceMappingURL=contact-rtl.css.map */

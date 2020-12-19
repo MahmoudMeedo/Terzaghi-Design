@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
+  <link rel="stylesheet" href="../css/layout/pages_style/contact.css" />
+  <!-- Global Font Of Page -->
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/loading.css" />
+  <title>Terzaghi-Contact</title>
+
+</head>
+
+<body>
+
+  <!-- Loading Overlay -->
+  <div class="overpage">
+    <div class="ring">
+      LOADING
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Hidden Navbar -->
+  <!-- Nav Icon Button For Displaying Navbar -->
+  <div class="nav-icon" id="rotate-icon">
+    <div class="bullet"></div>
+    <div class="bullet"></div>
+    <div class="bullet"></div>
+  </div>
+  <!-- Start Navbar -->
+  <nav id="nav-bar">
+    <button class="btn lang" type="submit"><a href="pages-rtl/contact-rtl.html">
+      Ar
+    </a></button>
+    <div class="logo-nav text-center text-uppercase">
+      <a href="#"><img src="../img/header/logo.png" alt=""></a>
+    </div>
+    <ul class="list-unstyled">
+      <li class="nav-item">
+        <a href="../index.html" class="nav-link">
+                Home
+            </a>
+      </li>
+      <li class="nav-item">
+        <a href="occupations.html" class="nav-link">
+                Occupations
+            </a>
+      </li>
+      <li class="nav-item">
+        <a href="innovation.html" class="nav-link">
+               Innovations
+            </a>
+      </li>
+      <li class="nav-item">
+        <a href="services.html" class="nav-link">
+                Services
+            </a>
+      </li>
+      <li class="nav-item">
+        <a href="conditions.html" class="nav-link">
+                Conditions
+            </a>
+      </li>
+    </ul>
+
+    <ul class="list-unstyled social-icons">
+      <li class="social-item"><a href="#"><i class="fab fa-facebook-f fa-2x"></i></a></li>
+      <li class="social-item"><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
+      <li class="social-item"><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
+      <li class="social-item"><a href="#"><i class="fab fa-youtube fa-2x"></i></a></li>
+    </ul>
+  </nav>
+  <!-- End Hidden Navbar -->
+
+  <!-- Start Contact Form -->
+  <section class="contact">
+    <div class="container">
+      <div class="row">
+        <div class="contact-details col-lg-6 d-flex justify-content-center align-items-center">
+          <ul class="list-unstyled contact-list">
+            <li class="list-item">
+              <h4 class="title"><i class="fas fa-map-marker-alt"></i> Address</h4>
+              <p class="text">Wasif At-Tall st.Khalid-Building No 279</p>
+            </li>
+            <li class="list-item">
+              <h4 class="title"><i class="fas fa-phone-alt"></i> Call Us</h4>
+              <p class="text">0796210402</p>
+            </li>
+            <li class="list-item">
+              <h4 class="title"><i class="fas fa-envelope"></i> Direct Message</h4>
+              <p class="text">Info@terzaghi-jo.com</p>
+            </li>
+          </ul>
+        </div>
+        <div class="form col-lg-6">
+          <h2 class="h1 text-center">Let's Get In Touch</h2>
+          <form>
+            <input type="text" placeholder="First Name" />
+            <input type="text" placeholder="Last Name" />
+            <input type="email" placeholder="Your Mail" />
+            <input type="phone" placeholder="Your Phone" />
+            <textarea name="message" placeholder="Message"></textarea>
+            <button class="send-btn"><input type="submit" value="Send" /> <i class="fab fa-telegram-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Contact Form -->
+
+  <!-- Start Footer -->
+  <footer>
+    <!-- Copyright -->
+    <div class="copyright exclude-overlay text-center">
+      <div class="container">
+        <h3>All Rights Reserved 2020 &copy; For <span class="text-uppercase">Terghazi</span> &trade;</h3>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+</body>
+
+<!-- Javascript Files -->
+<script src="../js/popper.min.js"></script>
+<script src="../js/Jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script>
+  $(window).on("load", function() {
+    $(".overpage").fadeOut(1000);
+    $('.navbar-light .navbar-nav .nav-item:nth-child(5)').addClass('active').siblings('li').removeClass('active');
+  });
+  const rotateIcon = document.getElementById('rotate-icon');
+  const navBar = document.getElementById('nav-bar');
+
+  rotateIcon.onclick = function() {
+    'use strict';
+
+    if (!rotateIcon.classList.contains("opened-bullet")) {
+      this.classList.add("bullets-animation", "opened-bullet");
+      this.classList.remove("x-button-animation");
+      navBar.classList.add("active-nav");
+    } else {
+      this.classList.remove("bullets-animation", "opened-bullet");
+      this.classList.add("x-button-animation");
+      navBar.classList.remove("active-nav");
+    }
+
+  };
+</script>
+
+</html>

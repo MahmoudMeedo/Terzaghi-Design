@@ -1,0 +1,101 @@
+footer {
+    background-image: url('../img/footer.jpg');
+    @include prefixer(background-size,
+    cover,
+    webkit moz o);
+    padding-top: 20px;
+    color: $fontColor;
+    position: relative;
+    &:after {
+        content: "";
+        @extend %globalOverlay;
+        background-color: rgba($primColor, .6);
+        z-index: 1;
+    }
+    .logo {
+        p {
+            margin: 20px 0;
+        }
+    }
+    .footer-links {
+        h3 {
+            font-weight: bold;
+            font-size: 25px;
+            margin: 10px 0 20px;
+            color: $secColor;
+        }
+        ul {
+            padding: 0 10px 20px;
+            li {
+                margin: 10px 0;
+                a {
+                    color: $fontColor;
+                    text-decoration: none;
+                    &:hover {
+                        color: $secColor;
+                    }
+                }
+            }
+        }
+    }
+    .contact-details {
+        .contact-details-info {
+            h3 {
+                font-weight: bold;
+                font-size: 25px;
+                margin: 10px 0 20px;
+                color: $secColor;
+            }
+            .footer-icon {
+                font-size: 18px;
+                margin-bottom: 15px;
+                i {
+                    color: $secColor;
+                    margin-right: 10px;
+                }
+            }
+        }
+        .contact-details-icons {
+            margin: 30px 0;
+            display: flex;
+            li {
+                margin: 0 5px;
+                padding: 10px;
+                width: 50px;
+                height: 50px;
+                line-height: 35px;
+                text-align: center;
+                border-radius: 6px;
+                &:first-of-type {
+                    background-color: #3b5999;
+                    margin-left: 0;
+                }
+                &:nth-of-type(2) {
+                    background-color: #55acee;
+                }
+                &:nth-of-type(3) {
+                    background-color: #e4405f;
+                }
+                &:last-of-type {
+                    background-color: #cd201f;
+                    padding: 10px 8px;
+                }
+                a {
+                    color: $fontColor;
+                }
+            }
+        }
+    }
+    .copyright {
+        padding: 20px 0;
+        border-top: 1px solid $fontColor;
+        box-shadow: 0px 20px 20px 9px $fontColor;
+        h3 {
+            margin: 0;
+            span {
+                color: $secColor;
+                text-transform: capitalize;
+            }
+        }
+    }
+}

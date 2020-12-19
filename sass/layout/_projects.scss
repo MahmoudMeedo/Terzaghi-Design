@@ -1,0 +1,79 @@
+.project {
+    padding: 50px 0;
+    background-color: #fff;
+    .glider-track {
+        margin-top: 40px;
+        height: 300px;
+        .project-box {
+            text-align: center;
+            position: relative;
+            margin: 0 20px;
+            @include prefixer(background-size, cover, webkit moz o);
+            &:first-of-type {
+                background-image: url('../img/projects/01.jpg');
+            }
+            &:nth-of-type(2) {
+                background-image: url('../img/projects/02.jpg');
+            }
+            &:nth-of-type(3) {
+                background-image: url('../img/projects/03.jpg');
+            }
+            &:nth-of-type(4) {
+                background-image: url('../img/projects/04.jpg');
+            }
+            &:nth-of-type(5) {
+                background-image: url('../img/projects/05.jpg');
+            }
+            &:nth-of-type(6) {
+                background-image: url('../img/projects/06.jpg');
+            }
+            &:nth-of-type(7) {
+                background-image: url('../img/projects/07.jpg');
+            }
+            &:nth-of-type(8) {
+                background-image: url('../img/projects/08.jpg');
+            }
+            &:last-of-type {
+                background-image: url('../img/projects/09.jpg');
+            }
+            &:before {
+                content: "";
+                @extend %globalOverlay;
+                z-index: 1;
+            }
+            .project-desc {
+                position: absolute;
+                bottom: -200px;
+                left: 0;
+                min-height: 50px;
+                width: 100%;
+                background-color: rgba($fontColor, 0.8);
+                color: $primColor;
+                z-index: 2;
+                padding: 10px 15px 0 15px;
+                @include prefixer(transition,
+                bottom 0.2s ease-in-out,
+                webkit moz o);
+                h4 {
+                    font-size: 16px;
+                }
+                p {
+                    font-size: 14px;
+                    i {
+                        color: $secColor;
+                        margin-right: 10px;
+                        font-size: 18px;
+                    }
+                }
+            }
+            &:hover {
+                .project-desc {
+                    bottom: 0;
+                }
+            }
+        }
+    }
+    .glider-dots {
+        margin-top: 20px;
+    }
+}

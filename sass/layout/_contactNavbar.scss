@@ -1,0 +1,155 @@
+// Nav Icon Style
+.nav-icon {
+    background-color: #4a5584;
+    position: fixed;
+    top: 9px;
+    right: 25px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    cursor: pointer;
+    z-index: 45;
+    border-radius: 50%;
+    .bullet {
+        margin: auto;
+        background-color: $fontColor;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+    }
+    // KeyFrames For Bullets
+    @keyframes rotateBullets {
+        from {
+            transform: rotate3d(0, 0, 1, 0deg);
+        }
+        to {
+            transform: rotate3d(0, 0, 1, 360deg);
+        }
+    }
+}
+
+// Animation To Rotate The Bullets 
+.bullets-animation {
+    animation: rotateBullets .1s linear 2 forwards;
+}
+
+// Opened Bullets Style (X Button)
+.opened-bullet .bullet {
+    height: 80%;
+    width: 3px;
+    border-radius: 0;
+    transition: all 0.1s ease-in-out;
+    &:first-of-type {
+        transform: translate(14px, 0px) rotateZ(45deg);
+    }
+    &:nth-of-type(2) {
+        opacity: 0;
+    }
+    &:last-of-type {
+        transform: translate(-13px, 0) rotateZ(-45deg);
+    }
+    // keyframes For X Button 
+    @keyframes closeRotatedBullets {
+        from {
+            transform: rotate3d(0, 0, 1, -360deg);
+        }
+        to {
+            transform: rotate3d(0, 0, 1, 0deg);
+        }
+    }
+}
+
+// Animation To Rotate The X Button 
+.x-button-animation {
+    animation: closeRotatedBullets .1s linear 2 forwards;
+}
+
+// Navbar Style
+nav {
+    background: rgba($primColor, .9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    @include prefixer(transition, all 0.5s ease-in-out, webkit moz o);
+    @include prefixer(clip-path, circle(100px at 120% -20%), webkit moz o);
+    button {
+        a {
+            font-size: 25px;
+            color: $secColor;
+            &:hover {
+                color: $fontColor;
+                text-decoration: none;
+            }
+        }
+    }
+    .logo-nav {
+        padding: 25px 30px;
+        a {
+            color: $fontColor;
+            font: {
+                size: 50px;
+                family: 'Galada', cursive;
+            }
+        }
+    }
+    ul {
+        width: 40%;
+        margin: auto;
+        text-align: center;
+        .nav-item {
+            margin-bottom: 15px;
+            .nav-link {
+                font-weight: bold;
+                font-family: sans-serif;
+                padding: 0.5rem;
+                font-size: 20px;
+                color: $fontColor;
+                @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+            }
+            &:hover {
+                .nav-link {
+                    color: darken($fontColor, 20);
+                }
+            }
+        }
+    }
+    .social-icons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        .social-item {
+            margin-right: 10px;
+            width: 45px;
+            height: 45px;
+            line-height: 60px;
+            text-align: center;
+            background-color: $fontColor;
+            @include prefixer(border-radius, 5px, webkit moz o);
+            color: $fontColor;
+            cursor: pointer;
+            &:first-of-type {
+                background-color: #3b5999;
+            }
+            &:nth-of-type(2) {
+                background-color: #55acee;
+            }
+            &:nth-of-type(3) {
+                background-color: #e4405f;
+            }
+            &:last-of-type {
+                background-color: #cd201f;
+            }
+        }
+    }
+}
+
+//  Active Class For Navbcon
+.active-nav {
+    top: 0;
+    left: 0;
+    @include prefixer(transition, all 0.5s ease-in-out, webkit moz o);
+    @include prefixer(clip-path, circle(2000px at 90% -20%), webkit moz o);
+}

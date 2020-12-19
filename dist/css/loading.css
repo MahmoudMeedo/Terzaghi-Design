@@ -1,0 +1,86 @@
+.overpage {
+    background-color: #303849;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 555555555
+}
+
+.ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    line-height: 250px;
+    background-color: transparent;
+    color: #f5a81c;
+    border: 3px solid #3c3c3c;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 40px;
+    letter-spacing: 4px;
+    border-radius: 50%;
+    text-shadow: 0 0 10px #f5a81c;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5)
+}
+
+.ring:before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+    border-top: 3px solid #f5a81c;
+    border-right: 3px solid #f5a81c;
+    border-radius: 50%;
+    animation: animateCircle 2s infinite linear;
+    box-sizing: unset;
+}
+
+.ring span {
+    display: block;
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 50%;
+    width: 50%;
+    height: 4px;
+    background-color: transparent;
+    transform-origin: left;
+    animation: animate 2s infinite linear;
+}
+
+.ring span:before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: ;
+    top: -6px;
+    right: -8px;
+    box-shadow: 0 0 20px #f5a81c;
+}
+
+@keyframes animateCircle {
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(45deg)
+    }
+    100% {
+        transform: rotate(405deg);
+    }
+}

@@ -1,0 +1,477 @@
+    // Import Files
+    @import '../../helper/vars';
+    @import '../../helper/mixins';
+    @import '../../helper/global';
+    @import '../../components/buttons';
+    @import '../../components/heading';
+    @import '../header';
+    @import '../footer';
+    @import 'global_pages_rulez';
+    // Header Styling
+    body {
+        height: auto;
+        background-color: white;
+    }
+    
+    // Main Services Heading
+    .main-services-heading {
+        text-transform: uppercase;
+        padding: 10px;
+        color: $secColor;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 40px;
+        span {
+            position: relative;
+            padding-bottom: 10px;
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 50px;
+                height: 2px;
+                background-color: $secColor;
+            }
+        }
+    }
+    
+    // Technical Services Style 
+    .technical-services {
+        padding: 50px 20px;
+        .technical-container {
+            .tech-service-child {
+                background-color: lighten($fontColor, 7);
+                color: $primColor;
+                margin-bottom: 10px;
+                margin-top: 10px;
+                @include prefixer(border-radius, 5px, webkit moz o);
+                display: flex;
+                align-items: center;
+                @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+                .tech-text {
+                    padding: 5px 10px;
+                    width: 75%;
+                    p {
+                        font-size: 14px;
+                        margin-bottom: 0;
+                    }
+                }
+                .tech-icon {
+                    width: 25%;
+                    text-align: center;
+                    color: $secColor;
+                    background-color: $primColor;
+                    border: 2px solid $secColor;
+                    i {
+                        height: 100%;
+                        width: 100%;
+                        line-height: 92px;
+                        @media #{$minLarge} and (max-width: 1095px) {
+                            line-height: 108px;
+                        }
+                    }
+                }
+                &.tech-left {
+                    border-left: 2px solid $secColor;
+                    .tech-icon {
+                        @include prefixer(border-top-right-radius, 10px, webkit moz o);
+                        @include prefixer(border-bottom-right-radius, 10px, webkit moz o);
+                    }
+                }
+                &.tech-right {
+                    flex-direction: row-reverse;
+                    border-right: 2px solid $secColor;
+                    .tech-icon {
+                        left: 0;
+                        @include prefixer(border-top-left-radius, 10px, webkit moz o);
+                        @include prefixer(border-bottom-left-radius, 10px, webkit moz o);
+                    }
+                }
+                &:hover {
+                    @include prefixer(box-shadow, 0 0 20px $primColor, webkit moz o);
+                }
+            }
+        }
+        .technical-img {
+            margin-top: 40px;
+            background-image: url('../../../img/pages/services/technical.jpg');
+            height: 636px;
+            @include prefixer(background-size,
+            cover,
+            webkit moz o);
+            @include prefixer(border-radius,
+            10px,
+            webkit moz o);
+            @include prefixer(box-shadow,
+            0 0 20px $primColor,
+            webkit moz o);
+            position: relative;
+            overflow: hidden;
+            @media #{$maxMedium} {
+                margin-top: 0;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($fontColor, .4);
+                opacity: 0;
+                @include prefixer(transition,
+                all 0.4s ease-in-out,
+                webkit moz o);
+                z-index: 1;
+            }
+            .services-img-contact {
+                @extend %positionCentering;
+                left: -51%;
+                background-color: rgba($fontColor, .7);
+                width: 100%;
+                min-height: 20%;
+                padding: 10px;
+                text-align: center;
+                z-index: 2;
+                @include prefixer(transition,
+                all 0.4s ease-in-out,
+                webkit moz o);
+                >a {
+                    @extend %mainButton;
+                    margin: 0;
+                }
+                .technical-services-social {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 20px;
+                    opacity: 1;
+                    .icon {
+                        a {
+                            i {
+                                color: #3b5999;
+                            }
+                        }
+                        &:nth-child(2) {
+                            a {
+                                i {
+                                    color: #55acee;
+                                }
+                            }
+                        }
+                        &:nth-child(3) {
+                            a {
+                                i {
+                                    color: #e4405f;
+                                }
+                            }
+                        }
+                        &:last-child {
+                            a {
+                                i {
+                                    color: #cd201f;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &:hover {
+                &:after {
+                    opacity: 1;
+                }
+                .services-img-contact {
+                    left: 50%;
+                }
+            }
+        }
+    }
+    
+    //Regulatory Services Style
+    .regulatory-services {
+        margin-top: 50px;
+        padding: 50px 15px;
+        background-image: url('../../../img/pages/services/regulatory.jpg');
+        @include prefixer(background-size,
+        cover,
+        webkit moz o);
+        background-attachment: fixed;
+        position: relative;
+        color: $fontColor;
+        .regulatory-services-overlay {
+            @extend %globalOverlay;
+            background-color: rgba($primColor, .4);
+            z-index: 1;
+        }
+        .regulatory-services-content {
+            position: relative;
+            z-index: 2;
+            h2 {
+                font-size: 50px;
+                font-weight: bold;
+                color: $secColor;
+            }
+            p {
+                font-size: 25px;
+                margin: 20px 0;
+            }
+            .regulatory-services-contact-btn {
+                padding: 15px 30px;
+                background-color: $primColor;
+                color: $secColor;
+                font-weight: bold;
+                font-size: 18px;
+                border: 2px solid $fontColor;
+                i {
+                    @include prefixer(transition,
+                    all 0.4s ease-in-out,
+                    webkit moz o);
+                }
+                &:hover {
+                    i {
+                        color: $fontColor;
+                        padding-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+    
+    // Excutive Services
+    .executive-services {
+        padding: 50px 20px;
+        .accordion-container {
+            .card {
+                border: none;
+                .card-header {
+                    padding: 0;
+                    border: none;
+                    margin-bottom: 20px;
+                    display: flex;
+                    border: none;
+                    color: $secColor;
+                    font-size: 22px;
+                    text-align: left;
+                    cursor: pointer;
+                    &.btn {
+                        padding: 0;
+                    }
+                    i {
+                        width: 8%;
+                        text-align: center;
+                        line-height: 40px;
+                        padding: 5px;
+                        background-color: $fontColor;
+                        border: 1px solid $fontColor;
+                        border-right: 0;
+                    }
+                    .btn-text {
+                        width: 92%;
+                        line-height: 50px;
+                        padding-left: 15px;
+                        margin: 0;
+                        background-color: #fff;
+                        border: 1px solid $fontColor;
+                        border-left: 0;
+                        font-size: 22px;
+                    }
+                }
+                .card-body {
+                    margin-bottom: 20px;
+                    padding: 0;
+                    .card-item {
+                        margin: 5px 0;
+                        padding: 5px;
+                        border: 1px solid lighten($fontColor, 5);
+                        color: $primColor;
+                        font-style: italic;
+                        i {
+                            width: 25px;
+                            height: 25px;
+                            line-height: 25px;
+                            color: #dad;
+                        }
+                        &:hover {
+                            color: #dad;
+                        }
+                    }
+                }
+                // Showing Chevron Up Icon And Removing Chevron Down For First Card Header
+                .card-header {
+                    &:not(:first-child) {
+                        i {
+                            &.fa-chevron-up {
+                                display: none;
+                            }
+                            &.fa-chevron-down {
+                                display: block;
+                            }
+                        }
+                    }
+                    &:first-child {
+                        i {
+                            &.fa-chevron-down {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // Executive Side Bar Info Style
+        .executive-services-sidebar-info {
+            border: 3px solid $secColor;
+            border-radius: 5px;
+            padding: 20px 40px;
+            height: 400px;
+            margin: 0;
+            .executive-services-sidebar-item {
+                text-align: center;
+                .projects-btn-contact {
+                    @extend %mainButton;
+                    margin-bottom: 40px;
+                    margin: 20px auto 40px auto;
+                }
+                .executive-services-list-contact-info {
+                    text-align: left;
+                    .executive-contact-info-item {
+                        .title {
+                            color: $primColor;
+                            i {
+                                margin-right: 10px;
+                                color: $secColor
+                            }
+                        }
+                        .text {
+                            padding-left: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    // Removing Color style From Collapsed Card
+    #accordion .collapsed {
+        color: $primColor;
+        // Showing Chevron Down Icon And Removing Chevron Up
+        i {
+            &.fa-chevron-down {
+                display: block;
+            }
+            &.fa-chevron-up {
+                display: none;
+            }
+        }
+    }
+    
+    // Technical Services Style
+    .build-mange-services {
+        padding: 50px 0;
+        .build-mange-services-content {
+            padding: 50px 20px;
+            background-image: url('../../../img/pages/services/building-management.jpg');
+            @include prefixer(background-size,
+            cover,
+            webkit moz o);
+            background-attachment: fixed;
+            position: relative;
+            color: $fontColor;
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 2px;
+                height: 100%;
+                background-color: darken($fontColor, 10);
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($primColor, .5);
+            }
+            .build-mange-services-desc {
+                font-size: 20px;
+                line-height: 1.8;
+                position: relative;
+                z-index: 2;
+            }
+            .build-mange-services-feats {
+                padding: 0 20px;
+                position: relative;
+                z-index: 2;
+                .build-mange-services-feats-item {
+                    font-size: 17px;
+                    margin-bottom: 5px;
+                    i {
+                        font-size: 20px;
+                        color: $secColor;
+                        margin-right: 8px;
+                    }
+                    &:hover {
+                        color: $primColor;
+                    }
+                }
+            }
+        }
+    }
+    
+    // Implementation Methods Services Style
+    .implementation-methods-services {
+        &-content {
+            padding: 50px 20px;
+            background-image: url('../../../img/pages/services/methods.jpg');
+            @include prefixer(background-size,
+            cover,
+            webkit moz o);
+            background-attachment: fixed;
+            position: relative;
+            color: $primColor;
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(darken($fontColor, 10), .5);
+            }
+            .implementation-methods-box {
+                margin-right: 10px;
+                border: 2px solid $secColor;
+                margin-bottom: 20px !important;
+                text-align: center;
+                position: relative;
+                border-radius: 10px;
+                overflow: hidden;
+                &:hover {
+                    &:before {
+                        background-color: rgba($primColor, 0.7);
+                    }
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba($primColor, 0.4);
+                }
+                h3 {
+                    padding: 10px;
+                    position: relative;
+                    color: #fff;
+                }
+                p {
+                    position: relative;
+                    color: $fontColor;
+                }
+            }
+        }
+    }

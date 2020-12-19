@@ -1,0 +1,23 @@
+/************************************/
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+a {
+  font-family: 'Cairo', sans-serif !important; }
+
+header {
+  text-align: right; }
+  header .upper-bar .say-hi {
+    font-size: 22px; }
+  header nav .contact .con-icon .con-text {
+    right: auto;
+    left: 0; }
+    @media (max-width: 991px) {
+      header nav .contact .con-icon .con-text {
+        left: auto; } }
+
+/*# sourceMappingURL=innovations-rtl.css.map */

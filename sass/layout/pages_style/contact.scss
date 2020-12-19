@@ -1,0 +1,116 @@
+// Import Files
+@import '../../helper/vars';
+@import '../../helper/mixins';
+@import '../../helper/global';
+@import '../../components/buttons';
+@import '../../components/heading';
+@import '../contactNavbar';
+@import '../footer';
+// Contact Styling
+.contact {
+    padding: 40px 0;
+    height: 100%;
+    background-color: $primColor;
+    .contact-details {
+        background-image: url('../../../img/pages/contact/contact.jpg');
+        @include prefixer(background-size,
+        cover,
+        webkit moz o);
+        color: $fontColor;
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($primColor, .8);
+            z-index: 1;
+        }
+        .contact-list {
+            position: relative;
+            z-index: 2;
+            .list-item {
+                margin: 40px 0;
+                .title {
+                    i {
+                        color: $secColor;
+                    }
+                }
+                .text {
+                    margin: 15px 0 15px 25px;
+                }
+            }
+        }
+    }
+    .form {
+        padding: 20px 40px;
+        background-color: lighten($primColor, 12);
+        h2 {
+            margin: 20px 0 40px;
+            color: $secColor;
+        }
+        input,
+        textarea {
+            background-color: rgba($fontColor, .4);
+            border: none;
+            margin: 5px;
+            color: $fontColor;
+            @include prefixer(border-radius,
+            10px,
+            webkit moz o);
+            padding: 10px 20px;
+            width: calc(50% - 10px);
+            &:first-of-type,
+            &:nth-of-type(3) {
+                margin-left: 0;
+            }
+            &:nth-of-type(2),
+            &[type="phone"] {
+                margin-right: 0;
+                margin-left: 10px;
+            }
+            &::placeholder {
+                color: #fff;
+            }
+        }
+        .send-btn {
+            border: none;
+            width: 100%;
+            font-size: 22px;
+            background-color: $secColor;
+            color: $fontColor;
+            position: relative;
+            @include prefixer(border-radius,
+            10px,
+            webkit moz o);
+            padding: 10px 20px;
+            text-align: center;
+            input {
+                background-color: $secColor;
+                padding: 0;
+            }
+            i {
+                position: absolute;
+                top: calc(50% - 10px);
+                left: 56%;
+            }
+        }
+        textarea {
+            resize: none;
+            width: 100%;
+            height: 120px;
+            margin: 5px 0;
+        }
+    }
+}
+
+// Footer Style
+footer {
+    padding: 0;
+    .copyright {
+        padding: 33px 0;
+        background-color: $primColor;
+    }
+}

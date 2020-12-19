@@ -1,0 +1,24 @@
+@import 'helper/vars';
+@import 'helper/mixins';
+@import 'global_rulez_rtl';
+// Start About
+.about {
+    .experience-image {
+        height: 450px !important;
+        text-align: left;
+        margin-right: 0 !important;
+        margin-left: 40px;
+    }
+}
+
+// Main About Heaings Style
+.about-headings {
+    padding-right: 10px;
+    &:before {
+        right: 0;
+    }
+}
+
+.about-content-font-size {
+    font-size: 22px !important;
+}

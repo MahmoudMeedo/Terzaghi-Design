@@ -1,0 +1,88 @@
+// Start Creativity
+.occupations-intro {
+    margin-top: 50px;
+    padding: 30px 15px;
+    background-color: $primColor;
+    color: $fontColor;
+    h4 {
+        color: $secColor;
+    }
+    .to-occupations {
+        margin: 20px 0 0;
+        i {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background-color: $fontColor;
+            color: $primColor;
+            cursor: pointer;
+            position: relative;
+            border-radius: 5px;
+            animation: tooccupations 0.5s infinite linear;
+            animation-direction: alternate-reverse;
+            @include prefixer(transition, color 0.3s ease-in-out, webkit moz o);
+            &:hover {
+                color: $secColor;
+            }
+        }
+    }
+}
+
+// Animation For To occupations Button
+@keyframes tooccupations {
+    from {
+        top: 10px;
+    }
+    to {
+        top: 0;
+    }
+}
+
+// Start occupations
+.occupations {
+    margin-top: 50px;
+    // occupations Content
+    .occupations-content {
+        margin-top: 40px;
+        .occupations-box {
+            padding: 15px 10px;
+            position: relative;
+            overflow: hidden;
+            .more-occupations-overlay {
+                position: absolute;
+                left: 0;
+                bottom: -100%;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($fontColor, .5);
+                @include prefixer(transition, bottom 0.3s ease-in-out, webkit moz o);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                a {
+                    @extend %mainButton;
+                    padding: 5px 6px;
+                    text-decoration: none;
+                }
+            }
+            .occupations-icon {
+                color: $secColor;
+            }
+            .occupations-text {
+                margin: 20px 0 0;
+                color: $primColor;
+                .occupations-title {
+                    font-size: 22px;
+                }
+                .occupations-desc {
+                    margin: 0;
+                }
+            }
+            &:hover {
+                .more-occupations-overlay {
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}

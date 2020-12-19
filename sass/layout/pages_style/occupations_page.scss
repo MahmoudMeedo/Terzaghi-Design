@@ -1,0 +1,96 @@
+// Import Files
+@import '../../helper/vars';
+@import '../../helper/mixins';
+@import '../../helper/global';
+@import '../../components/buttons';
+@import '../../components/heading';
+@import '../header';
+@import '../footer';
+@import 'global_pages_rulez';
+// Aside Nav
+.occupations-content {
+    background-color: lighten($fontColor, 100);
+    padding: 50px 0;
+    .occupy-navside {
+        .occupy-list-links {
+            padding: 10px 20px;
+            .occupy-item {
+                border: 1px solid $fontColor;
+                margin: 10px 0;
+                padding: 7px 50px 7px 25px;
+                font-size: 18px;
+                border-left: 2px solid $secColor;
+                cursor: pointer;
+                &:hover {
+                    color: $secColor;
+                }
+            }
+        }
+        .occupy-list-project {
+            padding: 10px 20px;
+            text-align: center;
+            .project-contact {
+                padding: 10px 20px;
+                margin-bottom: 10px;
+                cursor: pointer;
+                @include prefixer(border-radius, 10px, webkit moz o);
+                @include prefixer(transition, all 0.4s ease-in-out, webkit moz o);
+                &:first-child {
+                    background-color: $secColor;
+                    border: 2px solid $secColor;
+                }
+                &:last-child {
+                    background-color: $primColor;
+                    border: 2px solid $primColor;
+                }
+                a {
+                    color: lighten($fontColor, 20);
+                    font-size: 20px;
+                    text-decoration: none;
+                    @include prefixer(transition, all 0.4s ease-in-out, webkit moz o);
+                }
+                &:hover {
+                    a {
+                        color: $primColor;
+                    }
+                    &:first-child {
+                        background-color: transparent;
+                        border-color: $secColor;
+                    }
+                    &:last-child {
+                        background-color: transparent;
+                        border-color: $primColor;
+                    }
+                }
+            }
+        }
+    }
+    // Aside Content
+    .aside-content {
+        .aside-box {
+            .aside-text {
+                .aside-content-title {
+                    color: $secColor;
+                }
+                .aside-content-desc {
+                    margin-top: 20px;
+                    color: darken($fontColor, 50);
+                }
+            }
+            .aside-content-img {
+                img {
+                    border: 2px solid $secColor;
+                    width: 100%;
+                }
+            }
+            &:not(:first-child) {
+                display: none;
+            }
+        }
+    }
+}
+
+// Selected Aside Link
+.selected-aside-link {
+    color: $secColor;
+}

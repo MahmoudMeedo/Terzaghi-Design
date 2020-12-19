@@ -1,0 +1,158 @@
+.about {
+    padding: 50px 0;
+    // About Content
+    .about-content {
+        margin-top: 40px;
+        .vision {
+            .vision-context {
+                .vision-content {
+                    padding-top: 20px;
+                    font-size: 18px;
+                    line-height: 1.8;
+                    color: darken($fontColor, 25);
+                }
+            }
+            .vision-video {
+                video {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        // Experience Style
+        .experience {
+            margin-top: 60px;
+            @media #{$maxMobile} {
+                margin-top: 20px;
+            }
+            // Styling Image
+            .experience-image {
+                background-image: url('../img/exp.jpg');
+                background-size: cover;
+                height: 500px;
+                margin-right: 40px;
+                margin-bottom: 20px;
+                overflow: hidden;
+                @media #{$maxMedium} {
+                    margin: 0;
+                    margin-bottom: 20px;
+                }
+                .exp-img-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba($primColor, .3);
+                    @include prefixer(transition,
+                    all 0.3s ease-in-out,
+                    webkit moz o);
+                    >a {
+                        @extend %mainButton;
+                        @extend %positionCentering;
+                        margin: 0;
+                        @include prefixer(transition,
+                        all 0.3s ease-in-out 0.2s,
+                        webkit moz o);
+                        opacity: 0;
+                    }
+                    .exp-social {
+                        display: flex;
+                        @extend %positionCentering;
+                        top: calc(50% + 50px);
+                        opacity: 1;
+                        .icon {
+                            a {
+                                i {
+                                    color: #3b5999;
+                                    position: relative;
+                                    top: 220px;
+                                    @include prefixer(transition,
+                                    all 0.3s ease-in-out .2s,
+                                    webkit moz o);
+                                }
+                            }
+                            &:nth-child(2) {
+                                a {
+                                    i {
+                                        color: #55acee;
+                                        @include prefixer(transition-delay,
+                                        .3s,
+                                        webkit moz o);
+                                    }
+                                }
+                            }
+                            &:nth-child(3) {
+                                a {
+                                    i {
+                                        color: #e4405f;
+                                        @include prefixer(transition-delay,
+                                        .4s,
+                                        webkit moz o);
+                                    }
+                                }
+                            }
+                            &:last-child {
+                                a {
+                                    i {
+                                        color: #cd201f;
+                                        @include prefixer(transition-delay,
+                                        .5s,
+                                        webkit moz o);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    .exp-img-overlay {
+                        .exp-social {
+                            opacity: 1;
+                            .icon {
+                                a {
+                                    i {
+                                        top: 0;
+                                    }
+                                }
+                            }
+                        }
+                        a {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            // Styling Experience Context
+            .experience-context {
+                .experience-desc {
+                    padding-top: 20px;
+                    margin-bottom: 0;
+                    font-size: 18px;
+                    line-height: 1.8;
+                    color: darken($fontColor, 25);
+                    .best-exp {
+                        display: inline-block;
+                        color: $primColor;
+                        font-weight: bold;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Main About Heaings Style
+.about-headings {
+    font-size: 35px;
+    color: $secColor;
+    position: relative;
+    padding-left: 10px;
+    &:before {
+        content: "";
+        @extend %globalOverlay;
+        width: 3px;
+        background-color: darken($fontColor, 15);
+    }
+}

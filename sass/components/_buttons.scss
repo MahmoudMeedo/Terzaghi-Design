@@ -1,0 +1,28 @@
+%mainButton {
+    background-color: $secColor;
+    color: $fontColor;
+    border-color: $fontColor;
+    font-size: 22px;
+    color: $fontColor;
+    margin-top: 20px;
+    margin-right: 10px;
+    outline: none;
+    border: 2px solid $secColor;
+    position: relative;
+    overflow: hidden;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, #fff, transparent);
+        @include prefixer(transition, all 0.2s ease-in-out, webkit moz o);
+    }
+    &:hover {
+        &:before {
+            left: 100%;
+        }
+    }
+}

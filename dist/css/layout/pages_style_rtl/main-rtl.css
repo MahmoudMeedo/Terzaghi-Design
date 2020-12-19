@@ -1,0 +1,37 @@
+/************************************/
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+a {
+  font-family: 'Cairo', sans-serif !important; }
+
+header {
+  text-align: right; }
+  header .upper-bar .say-hi {
+    font-size: 22px; }
+  header nav .contact .con-icon .con-text {
+    right: auto;
+    left: 0; }
+    @media (max-width: 991px) {
+      header nav .contact .con-icon .con-text {
+        left: auto; } }
+
+.about .experience-image {
+  height: 450px !important;
+  text-align: left;
+  margin-right: 0 !important;
+  margin-left: 40px; }
+
+.about-headings {
+  padding-right: 10px; }
+  .about-headings:before {
+    right: 0; }
+
+.about-content-font-size {
+  font-size: 22px !important; }
+
+/*# sourceMappingURL=main-rtl.css.map */

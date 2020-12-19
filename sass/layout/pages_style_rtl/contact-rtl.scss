@@ -1,0 +1,22 @@
+@import 'helper/vars';
+@import 'helper/mixins';
+@import 'global_rulez_rtl';
+.opened-bullet .bullet {
+    &:first-of-type {
+        @include prefixer(transform, translate(-14px, 0px) rotateZ(45deg), webkit moz o);
+    }
+    &:last-of-type {
+        @include prefixer(transform, translate(13px, 0) rotateZ(-45deg), webkit moz o);
+    }
+}
+
+.contact .form input[type="phone"],
+.contact .form input:nth-of-type(2) {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+.contact .form input:first-of-type,
+.contact .form input:nth-of-type(3) {
+    margin-right: 0;
+}

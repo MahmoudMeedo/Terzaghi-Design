@@ -1,0 +1,45 @@
+.innovation {
+    margin-top: 50px;
+    padding: 50px 15px;
+    background-image: url('../img/innovation-bg.jpg');
+    @include prefixer(background-size,
+    cover,
+    webkit moz o);
+    background-attachment: fixed;
+    position: relative;
+    color: $fontColor;
+    .inno-overlay {
+        @extend %globalOverlay;
+        z-index: 1;
+    }
+    .inno-content {
+        h2 {
+            font-size: 50px;
+            font-weight: bold;
+            color: $secColor;
+        }
+        p {
+            font-size: 25px;
+            margin: 20px 0;
+        }
+        .inno-contact-btn {
+            padding: 15px 30px;
+            background-color: $primColor;
+            color: $secColor;
+            font-weight: bold;
+            font-size: 18px;
+            border: 2px solid $fontColor;
+            i {
+                @include prefixer(transition,
+                all 0.4s ease-in-out,
+                webkit moz o);
+            }
+            &:hover {
+                i {
+                    color: $fontColor;
+                    padding-left: 5px;
+                }
+            }
+        }
+    }
+}

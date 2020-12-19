@@ -1,0 +1,45 @@
+body {
+    height: auto;
+    background-color: white;
+}
+
+// Header Styling For Pages
+header {
+    background-image: none;
+    height: auto;
+    .out-overlay {
+        background-color: lighten($fontColor, 100);
+    }
+    nav {
+        .navbar-nav .nav-item {
+            .nav-link {
+                color: $primColor;
+            }
+            .dropdown-menu {
+                background-color: #f5a81c;
+                border-color: #444;
+            }
+        }
+        .contact .con-icon i {
+            border-color: $secColor;
+        }
+    }
+}
+
+// Main Styling For Pages
+main {
+    background: transparent;
+    border-top: 1px solid $fontColor;
+    border-bottom: 1px solid $fontColor;
+    h1 {
+        color: $secColor;
+        padding: 50px 0;
+        margin-bottom: 0;
+        font-weight: bold;
+    }
+}
+
+// Footer Background Image
+footer {
+    background-image: url('../../../img/footer.jpg');
+}

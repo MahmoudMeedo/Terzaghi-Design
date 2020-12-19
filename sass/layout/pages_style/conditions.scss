@@ -1,0 +1,36 @@
+// Import Files
+@import '../../helper/vars';
+@import '../../helper/mixins';
+@import '../../helper/global';
+@import '../../components/buttons';
+@import '../../components/heading';
+@import '../header';
+@import '../footer';
+@import 'global_pages_rulez';
+// Conditions Style
+.conditions {
+    padding: 50px 20px;
+    .responsible {
+        h2 {
+            font-size: 40px;
+            color: $secColor;
+        }
+        p {
+            margin: 20px 0 40px 0;
+            font-size: 20px;
+            line-height: 1.8;
+            color: $primColor;
+        }
+    }
+    .responsible-sector {
+        background-color: $fontColor;
+        border: 2px solid #fff;
+        padding: 20px;
+        h3 {
+            background-color: $primColor;
+            color: $secColor;
+            padding: 10px 5px;
+            font-size: 22px;
+        }
+    }
+}

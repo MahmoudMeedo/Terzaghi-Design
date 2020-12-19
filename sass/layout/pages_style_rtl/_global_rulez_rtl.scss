@@ -1,0 +1,32 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+a {
+    font-family: 'Cairo', sans-serif !important;
+}
+
+header {
+    text-align: right;
+    .upper-bar {
+        .say-hi {
+            font-size: 22px;
+        }
+    }
+    nav {
+        .contact {
+            .con-icon {
+                .con-text {
+                    right: auto;
+                    left: 0;
+                    @media #{$maxMedium} {
+                        left: auto;
+                    }
+                }
+            }
+        }
+    }
+}

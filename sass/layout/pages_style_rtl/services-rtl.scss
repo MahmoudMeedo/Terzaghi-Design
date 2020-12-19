@@ -1,0 +1,9 @@
+@import 'helper/vars';
+@import 'helper/mixins';
+@import 'global_rulez_rtl';
+.executive-services .executive-services-sidebar-info .executive-services-sidebar-item .executive-services-list-contact-info .executive-contact-info-item {
+    text-align: right;
+    .text {
+        padding-right: 40px;
+    }
+}

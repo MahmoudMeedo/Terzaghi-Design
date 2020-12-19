@@ -1,0 +1,230 @@
+header {
+    background-image: url('../img/header/bg.jpg');
+    @include prefixer(background-size,
+    cover,
+    webkit moz o);
+    height: 635px;
+    position: relative;
+    &:after {
+        content: "";
+        @extend %globalOverlay;
+        background-color: rgba($primColor, .6);
+        z-index: 1;
+    }
+    // Out Overlay
+    .out-overlay {
+        position: relative;
+        z-index: 2;
+        .upper-bar {
+            background-color: $primColor;
+            padding: 10px 0;
+            color: $fontColor;
+            @media #{$maxSmall} {
+                padding: 0;
+            }
+            .say-hi {
+                @media(min-width: 1125px) and (max-width: 1158px) {
+                    line-height: inherit;
+                }
+                @media(min-width: 1159px) {
+                    line-height: 50px;
+                }
+                @media #{$maxMedium} {
+                    text-align: center;
+                    padding: 10px;
+                }
+                @media #{$maxSmall} {
+                    margin: 0;
+                }
+            }
+            .social-icons {
+                @media #{$maxSmall} {
+                    padding: 10px 0;
+                }
+                .icon {
+                    a {
+                        color: $fontColor;
+                        @include prefixer(transition,
+                        color 0.3s ease-in-out,
+                        webkit moz o);
+                        &:hover {
+                            color: $secColor;
+                        }
+                    }
+                }
+            }
+            .search {
+                @media #{$maxSmall} {
+                    justify-content: center !important;
+                    align-items: center !important;
+                    margin-bottom: 10px;
+                }
+                form {
+                    .form-control {
+                        color: $fontColor;
+                        background-color: transparent;
+                        @include prefixer(border-radius,
+                        0,
+                        webkit moz o);
+                        margin-right: 0 !important;
+                        border-color: $secColor;
+                        &:focus {
+                            box-shadow: none;
+                        }
+                    }
+                }
+                .btn-go {
+                    @include prefixer(border-radius,
+                    0,
+                    webkit moz o);
+                    border-color: $secColor;
+                    background-color: $secColor;
+                    height: 100%;
+                }
+            }
+            .lang {
+                font-size: 24px;
+                margin: 0 6px;
+                cursor: pointer;
+                a {
+                    text-decoration: none;
+                    color: $fontColor;
+                    &:hover {
+                        color: $secColor;
+                    }
+                }
+            }
+        }
+    }
+    // Start Navbar
+    nav {
+        .navbar-brand {
+            img {
+                max-width: 60%;
+            }
+        }
+        .navbar-nav {
+            .nav-item {
+                margin-right: 20px;
+                .nav-link {
+                    color: $fontColor;
+                    font: {
+                        size: 20px;
+                    }
+                    &:hover {
+                        color: darken($fontColor, 20);
+                    }
+                }
+            }
+        }
+        .contact {
+            line-height: 34px;
+            .con-icon {
+                display: inline-block;
+                position: relative;
+                &:hover {
+                    .con-text {
+                        text-align: center;
+                        width: 200px;
+                        padding-right: 5px;
+                        z-index: 56;
+                        span {
+                            opacity: 1;
+                        }
+                    }
+                }
+                &:nth-child(2) {
+                    &:hover {
+                        .con-text {
+                            width: 285px;
+                        }
+                    }
+                }
+                i {
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    font-size: 24px;
+                    border: 1px solid $fontColor;
+                    margin: 0 6px;
+                    color: $secColor;
+                    cursor: pointer;
+                }
+                .con-text {
+                    position: absolute;
+                    top: 0;
+                    right: 46px;
+                    background-color: $fontColor;
+                    color: $primColor;
+                    height: 98%;
+                    width: 0;
+                    @include prefixer(transition,
+                    all 0.3s ease-in-out,
+                    webkit moz o);
+                    overflow: hidden;
+                    line-height: 40px;
+                    span {
+                        opacity: 0;
+                        @include prefixer(transition,
+                        all 0.1s ease-in-out,
+                        webkit moz o);
+                        @include prefixer(transition-delay,
+                        .4s,
+                        webkit moz o);
+                    }
+                }
+            }
+        }
+    }
+    // Content Style
+    .content {
+        color: #fff;
+        padding-top: 60px;
+        @media #{$maxSmall} {
+            padding-top: 0;
+        }
+        @media #{$maxMobile} {
+            padding-top: 25px;
+        }
+        h1 {
+            font-size: 35px;
+            @media #{$maxMobile} {
+                font-size: 25px;
+            }
+            span {
+                display: inline-block;
+                padding: 20px;
+                background-color: rgba($secColor, 0.4);
+                @include prefixer(border-radius,
+                20px,
+                webkit moz o);
+                font-size: 60px;
+                margin-bottom: 20px;
+                font-family: 'Marck Script', cursive;
+                @media #{$maxMobile} {
+                    padding: 10px;
+                    font-size: 35px;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        .header-paragraph {
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: $fontColor;
+            @media #{$maxMobile} {
+                font-size: 17px;
+            }
+        }
+        .header-btn-contact {
+            @extend %mainButton;
+            margin-top: 0;
+        }
+    }
+}
+
+// Active Class For Navbar Links
+.navbar-light .navbar-nav .active>.nav-link {
+    color: $secColor !important;
+    border-bottom: 2px solid $secColor;
+}
